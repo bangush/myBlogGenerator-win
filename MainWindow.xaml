@@ -1,0 +1,191 @@
+﻿<Window x:Class="blogcreator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="文章生成器" Height="550" Width="550"
+        ResizeMode="CanMinimize">
+    <Grid>
+        <StackPanel x:Name="整体框架"
+                    Orientation="Vertical">
+            <StackPanel x:Name="文本框的框架"
+                        Orientation="Vertical">
+                <StackPanel x:Name="文件名框架"
+                            Width="500"
+                            Height="auto"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="10,10,10,0">
+                    <Label Content="文章标题"
+                           Margin="10,10,20,10"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                    <TextBox x:Name="Article_Title_Textbox"
+                             Text="输入文章标题"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Width="400"
+                             Height="30"
+                             Background="AliceBlue"
+                             HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel x:Name="摘要框架"
+                            Width="500"
+                            Height="auto"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="10,0,10,0">
+                    <Label Content="文章摘要"
+                           Margin="10,10,20,10"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                    <TextBox x:Name="Article_excerpt_Textbox"
+                            Text="输入文章摘要"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            Width="400"
+                            Height="30"
+                            Background="AliceBlue"
+                            HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel x:Name="KEY框架"
+                            Width="500"
+                            Height="auto"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="10,0,10,0">
+                    <Label Content="文章关键字"
+                           Margin="10,10,9,10"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                    <TextBox x:Name="Article_Key_Textbox"
+                             Text="输入文章关键字"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Width="400"
+                             Height="30"
+                             Background="AliceBlue"
+                             HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel x:Name="标签框架"
+                            Width="500"
+                            Height="auto"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="10,0,10,0">
+                    <Label Content="文章标签"
+                           Margin="10,10,20,10"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                    <TextBox x:Name="Article_Tags_Textbox"
+                             Text="输入文章标签"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Width="400"
+                             Height="30"
+                             Background="AliceBlue"
+                             HorizontalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="选项框架"
+                        Width="500"
+                        Orientation="Horizontal">
+                <StackPanel x:Name="文章类型"
+                            Height="auto"
+                            Width="auto"
+                            Margin="20,0,10,0"
+                            HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                    <Label VerticalAlignment="Center"
+                            Content="选择文章类型">
+                    </Label>
+                    <StackPanel Margin="20,0,10,0"
+                                Orientation="Vertical"
+                                VerticalAlignment="Center">
+                        <RadioButton x:Name="Article_type_coding_radiobutton"
+                                     GroupName="article_type_selector"
+                                     Content="编程练习"
+                                     Checked="Article_type_coding_radiobutton_Checked">
+                        </RadioButton>
+                        <RadioButton x:Name="Article_type_bio_radiobutton"
+                                     Content="生物信息"
+                                     GroupName="article_type_selector"
+                                     Checked="Article_type_bio_radiobutton_Checked">
+                        </RadioButton>
+                        <RadioButton x:Name="Article_type_blog_radiobutton"
+                                     Content="普通文章"
+                                     IsChecked="True"
+                                     GroupName="article_type_selector"
+                                     Checked="Article_type_blog_radiobutton_Checked">
+                        </RadioButton>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel x:Name="Coding_options" Visibility="Collapsed">
+                    <Label Content="第几章"/>
+                    <TextBox x:Name="Coding_chapter" 
+                             Margin="0,0,0,0"
+                             TextChanged="Coding_chapter_TextChanged" Background="#FFAED9FF"/>
+                    <Label Content="几道题"/>
+                    <TextBox x:Name="Coding_practices"
+                             Margin="0,0,0,0" Background="#FFB6DCFD"
+                             />
+                </StackPanel>
+                <StackPanel x:Name="标题样式"
+                            Height="auto"
+                            Width="auto"
+                            Margin="10,0,20,0"
+                            HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                    <Label VerticalAlignment="Center"
+                           Content="选择标题样式">
+                    </Label>
+                    <StackPanel Margin="20,0,10,0"
+                                Orientation="Vertical"
+                                VerticalAlignment="Center">
+                        <RadioButton x:Name="Header_type_light_radiobutton"
+                                     Content="浅色主题"
+                                     GroupName="header_type_selector">
+                        </RadioButton>
+                        <RadioButton x:Name="Header_type_dark_radiobutton"
+                                     Content="深色主题"
+                                     GroupName="header_type_selector">
+                        </RadioButton>
+                        <RadioButton x:Name="Header_type_none_radiobutton"
+                                     Content="没有主题"
+                                     IsChecked="True"
+                                     GroupName="header_type_selector">
+                        </RadioButton>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="按钮框架"
+                            VerticalAlignment="Center"
+                        Margin="0,20,0,10">
+                <Button x:Name="Generator_button"
+                            Content="生成并打开"
+                        Width="300"
+                        Height="30"
+                        FontSize="20"
+                        Background="#FFBBCBFF"
+                        Click="Generator_button_Click"/>
+            </StackPanel>
+            <StackPanel x:Name="结果框架"
+                        Width="500"
+                        Margin="0,20,0,0"
+                        Height="150">
+                <TextBlock x:Name="Result_TextBlock"
+                           Height="130"
+                           Text="这里显示运行的结果"
+                           FontSize="15"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"
+                           Margin="10"
+                           Background="Black"
+                           Foreground="White"
+                           ScrollViewer.VerticalScrollBarVisibility="Auto"
+                           ScrollViewer.CanContentScroll="True"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

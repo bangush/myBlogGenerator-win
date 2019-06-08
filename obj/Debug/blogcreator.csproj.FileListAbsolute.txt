@@ -1,0 +1,14 @@
+d:\Users\wdyyy\Documents\code\c#\blogcreator\bin\Debug\blogcreator.exe.config
+d:\Users\wdyyy\Documents\code\c#\blogcreator\bin\Debug\blogcreator.exe
+d:\Users\wdyyy\Documents\code\c#\blogcreator\bin\Debug\blogcreator.pdb
+d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\blogcreator.csprojAssemblyReference.cache
+d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\MainWindow.baml
+d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\MainWindow.g.cs
+d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\App.g.cs
+d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\blogcreator_MarkupCompile.cache
+d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\blogcreator.g.resources
+d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\blogcreator.Properties.Resources.resources
+d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\blogcreator.csproj.GenerateResource.cache
+d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\blogcreator.csproj.CoreCompileInputs.cache
+d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\blogcreator.exe
+d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\blogcreator.pdb
