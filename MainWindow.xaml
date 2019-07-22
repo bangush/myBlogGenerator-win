@@ -87,6 +87,32 @@
                              Background="AliceBlue"
                              HorizontalAlignment="Center"/>
                 </StackPanel>
+                <StackPanel x:Name="地址框架"
+                            Width="500"
+                            Height="auto"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="10,0,10,0">
+                    <Label Content="文章地址"
+                           Margin="10,10,20,10"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                    <TextBox x:Name="Article_address_Textbox"
+                             Text="选择文章路径"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Width="300"
+                             Height="30"
+                             Background="AliceBlue"
+                             HorizontalAlignment="Center"
+                             MouseDoubleClick="Article_address_Textbox_MouseDoubleClick"/>
+                    <Button x:Name="path_chooser"
+                            Content="浏览"
+                            Width="80"
+                            Height="30"
+                            Margin="20,0,0,0" BorderBrush="{x:Null}" Background="#FFB5D5E4"
+                            Click="Path_chooser_Click"/>
+                </StackPanel>
             </StackPanel>
             <StackPanel x:Name="选项框架"
                         Width="500"
@@ -118,6 +144,11 @@
                                      IsChecked="True"
                                      GroupName="article_type_selector"
                                      Checked="Article_type_blog_radiobutton_Checked">
+                        </RadioButton>
+                        <RadioButton x:Name="Article_type_free_radiobutton"
+                                     Content="自定义"
+                                     GroupName="article_type_selector"
+                                     Checked="Article_type_free_radiobutton_Checked">
                         </RadioButton>
                     </StackPanel>
                 </StackPanel>
@@ -152,7 +183,7 @@
                                      GroupName="header_type_selector">
                         </RadioButton>
                         <RadioButton x:Name="Header_type_none_radiobutton"
-                                     Content="没有主题"
+                                     Content="默认主题"
                                      IsChecked="True"
                                      GroupName="header_type_selector">
                         </RadioButton>
@@ -170,21 +201,20 @@
                         Background="#FFBBCBFF"
                         Click="Generator_button_Click"/>
             </StackPanel>
+            
             <StackPanel x:Name="结果框架"
                         Width="500"
                         Margin="0,20,0,0"
-                        Height="150">
+                        Height="120">
                 <TextBlock x:Name="Result_TextBlock"
-                           Height="130"
+                           Height="100"
                            Text="这里显示运行的结果"
-                           FontSize="15"
+                           FontSize="14"
                            TextWrapping="Wrap"
-                           TextAlignment="Center"
-                           Margin="10"
+                           TextAlignment="Left"
                            Background="Black"
                            Foreground="White"
-                           ScrollViewer.VerticalScrollBarVisibility="Auto"
-                           ScrollViewer.CanContentScroll="True"/>
+                           ScrollViewer.CanContentScroll="True" IsEnabled="False"/>
             </StackPanel>
         </StackPanel>
     </Grid>

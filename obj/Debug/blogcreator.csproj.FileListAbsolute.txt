@@ -12,3 +12,16 @@ d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\blogcreator.csproj.Genera
 d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\blogcreator.csproj.CoreCompileInputs.cache
 d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\blogcreator.exe
 d:\Users\wdyyy\Documents\code\c#\blogcreator\obj\Debug\blogcreator.pdb
+F:\github\generator\bin\Debug\blogcreator.exe.config
+F:\github\generator\bin\Debug\blogcreator.exe
+F:\github\generator\bin\Debug\blogcreator.pdb
+F:\github\generator\obj\Debug\MainWindow.baml
+F:\github\generator\obj\Debug\MainWindow.g.cs
+F:\github\generator\obj\Debug\App.g.cs
+F:\github\generator\obj\Debug\blogcreator_MarkupCompile.cache
+F:\github\generator\obj\Debug\blogcreator.g.resources
+F:\github\generator\obj\Debug\blogcreator.Properties.Resources.resources
+F:\github\generator\obj\Debug\blogcreator.csproj.GenerateResource.cache
+F:\github\generator\obj\Debug\blogcreator.csproj.CoreCompileInputs.cache
+F:\github\generator\obj\Debug\blogcreator.exe
+F:\github\generator\obj\Debug\blogcreator.pdb

@@ -1,20 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
+using System.Windows.Forms;
 namespace blogcreator
 {
     /// <summary>
@@ -31,10 +21,11 @@ namespace blogcreator
         {
 
         }
-
-        const string Address_practice = "d:\\Users\\wdyyy\\Documents\\GitHub\\wdyyy.github.io\\_posts\\practices\\";
-        const string Address_bioinfo = "d:\\Users\\wdyyy\\Documents\\GitHub\\wdyyy.github.io\\_posts\\bioinformatics\\";
-        const string Address_blog = "d:\\Users\\wdyyy\\Documents\\GitHub\\wdyyy.github.io\\_posts\\blogs\\";
+        string path = string.Empty;
+        string defaultPath = "F:\\wdyyy\\Desktop";
+        string Address_practice = "\\_posts\\practices\\";
+        string Address_bioinfo = "\\_posts\\bioinformatics\\";
+        string Address_blog = "\\_posts\\blogs\\";
         private void Article_type_coding_radiobutton_Checked(object sender, RoutedEventArgs e)
         {
             Coding_options.Visibility = Visibility.Visible;
@@ -103,13 +94,13 @@ namespace blogcreator
         private string CreatFile(string name, string file_URL, string content)
         {
             string path = file_URL + name;
-            FileStream fsOBJ = new FileStream(path,FileMode.Create);
+            FileStream fsOBJ = new FileStream(path, FileMode.Create);
             StreamWriter file_writter = new StreamWriter(fsOBJ);
             file_writter.Write(content);
             file_writter.Flush();
             file_writter.Close();
             Process.Start(path);
-            return $"------生成完毕------\n------文件地址------\n{file_URL}\n------文件名------\n{name}";
+            return $"------生成完毕------\n------文件地址------\n{path}\n------文件名------\n{name}";
         }
 
         private void Generator_button_Click(object sender, RoutedEventArgs e)
@@ -118,15 +109,23 @@ namespace blogcreator
             string user_content = Generate_content(Article_Title_Textbox.Text, Get_Date(), Article_excerpt_Textbox.Text, Article_Key_Textbox.Text, Article_Tags_Textbox.Text);
             if (Article_type_coding_radiobutton.IsChecked == true)
             {
-                Result_TextBlock.Text = CreatFile(file_name, Address_practice, user_content);
+                string finalPath = path + Address_practice;
+                Result_TextBlock.Text = CreatFile(file_name, finalPath, user_content);
             }
             else if (Article_type_bio_radiobutton.IsChecked == true)
             {
-                Result_TextBlock.Text = CreatFile(file_name, Address_bioinfo, user_content);
+                string finalPath = path + Address_bioinfo;
+                Result_TextBlock.Text = CreatFile(file_name, finalPath, user_content);
             }
             else if (Article_type_blog_radiobutton.IsChecked == true)
             {
-                Result_TextBlock.Text = CreatFile(file_name, Address_blog, user_content);
+                string finalPath = path + Address_blog;
+                Result_TextBlock.Text = CreatFile(file_name, finalPath, user_content);
+            }
+            else
+            {
+                string finalPath = path + "\\";
+                Result_TextBlock.Text = CreatFile(file_name, finalPath, user_content);
             }
         }
         private void Coding_chapter_TextChanged(object sender, TextChangedEventArgs e)
@@ -135,6 +134,31 @@ namespace blogcreator
             Article_excerpt_Textbox.Text = $"《c++ primer plut 6th》课后编程题第{Coding_chapter.Text}章";
             Article_Key_Textbox.Text = $"code_practice_Chapter{Coding_chapter.Text}";
             Article_Tags_Textbox.Text = "C++ Primer Plus";
+        }
+
+        private void Path_chooser_Click(object sender, RoutedEventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                path = fbd.SelectedPath;
+            }
+            else
+            {
+                path = defaultPath;
+            }
+            Article_address_Textbox.Text = path;
+        }
+
+        private void Article_address_Textbox_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            path = defaultPath;
+            Article_address_Textbox.Text = path;
+        }
+
+        private void Article_type_free_radiobutton_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
